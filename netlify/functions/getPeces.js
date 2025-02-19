@@ -24,6 +24,9 @@ exports.handler = async (event, context) => {
     // Devuelve solo los peces
     return {
       statusCode: 200,
+      headers: {
+        'ContentType':'application/json'
+      },
       body: JSON.stringify(pecesData),
     };
   };

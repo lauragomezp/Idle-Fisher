@@ -42,6 +42,9 @@ exports.handler = async (event, context) => {
     // Devuelve solo los usuarios
     return {
       statusCode: 200,
+      headers: {
+        'ContentType':'application/json'
+      },
       body: JSON.stringify(usuariosData),
     };
   };
