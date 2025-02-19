@@ -39,7 +39,7 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
   const borrarPartida = (usuario) =>{
         const confirmar = window.confirm("¿Estás seguro de que deseas eliminar esta partida?");
         if (confirmar) {
-          setUsuarios(eliminarUsuario(usuarios, usuario.id))
+          setUsuarios(eliminarUsuario(usuarios, usuario))
           alert("Partida eliminada correctamente.");
         }
   }

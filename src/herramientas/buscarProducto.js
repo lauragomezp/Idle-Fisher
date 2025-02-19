@@ -27,8 +27,9 @@ export function anadirUsuario(informacion, nuevoUsuario) {
   return [...informacion, nuevoUsuario];
 }
 
-export function eliminarUsuario(informacion, usuarioID) {
-  return informacion.filter(usuario => usuario.id !== usuarioID.toLowerCase());
+export function eliminarUsuario(informacion, usuario) {
+  const usuarioID = usuario.id
+  return informacion.filter(usuario => usuario.id !== usuarioID);
 }
 
 
