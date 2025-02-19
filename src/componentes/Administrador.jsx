@@ -36,13 +36,14 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
     setModals({ ...modals, crear: false });
   };
 
-  const borrarPartida = (usuario) =>{
-        const confirmar = window.confirm("¿Estás seguro de que deseas eliminar esta partida?");
-        if (confirmar) {
-          setUsuarios(eliminarUsuario(usuarios, usuario))
-          alert("Partida eliminada correctamente.");
-        }
-  }
+    const borrarPartida = (usuario) => {
+      const confirmar = window.confirm("¿Estás seguro de que deseas eliminar esta partida?");
+      if (confirmar) {
+        setUsuarios(prevUsuarios => eliminarUsuario(prevUsuarios, usuario));
+        alert("Partida eliminada correctamente.");
+      }
+    }
+
 
   return (
     <>
