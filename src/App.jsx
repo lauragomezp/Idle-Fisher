@@ -93,7 +93,12 @@ function App() {
   useEffect(()=>{
     ServicioInformacion.getAll()
     .then((response)=>{
-      setPeces(response.data)
+      if (response && response.data && response.data.peces) {
+        setPeces(response.data.peces);
+      } else {
+        console.error("Datos mal formateados", response);
+      }
+      console.log(response)
     }
     )
     .catch((error)=>{alert("no se ha podido cargar la info "+ error)})
@@ -103,8 +108,8 @@ function App() {
   useEffect(()=>{
     ServicioInformacionUsuarios.getAll()
     .then((response)=>{
-      console.log(response.data)
-      setUsuarios(response.data)
+      console.log(response.data.usuarios)
+      setUsuarios(response.data.usuarios)
     }
     )
     .catch((error)=>{alert("no se ha podido cargar la info "+ error)})

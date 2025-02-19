@@ -4,14 +4,11 @@ import LocalStorageServicio from "./localStorage.js";
 function UseLocalStorageState(clave, valorInicial) {
   const [state, setState] = useState(() => {
     
-    // Recupera el valor inicial desde localStorage o usa el valor predeterminado
     const valorGuardado = LocalStorageServicio.get(clave);
     return valorGuardado !== null ? valorGuardado : valorInicial;
   });
 
   useEffect(() => {
-
-    // Guarda el estado en localStorage cada vez que cambie
     LocalStorageServicio.set(clave, state);
     
   }, [state]);
