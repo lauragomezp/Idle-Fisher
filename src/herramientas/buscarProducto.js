@@ -28,8 +28,8 @@ export function anadirUsuario(informacion, nuevoUsuario) {
 }
 
 export function eliminarUsuario(informacion, usuarioEliminar) {
-  const usuarioID = usuarioEliminar.id
-  return informacion.filter(usuario => usuario.id !== usuarioID);
+
+  return informacion.filter(usuario => usuario.nombre !== usuarioEliminar.nombre);
 }
 
 

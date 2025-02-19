@@ -63,7 +63,6 @@ function App() {
   ];
 
   const usuariosJSON = [{
-    "id": "17e9",
     "nombre": "vacío",
     "clicks": 0,
     "pescadores": [
