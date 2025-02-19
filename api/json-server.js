@@ -1,15 +1,13 @@
-import fs from 'fs';
+import jsonServer from 'json-server';
 import path from 'path';
 
-export default (req, res) => {
-  const filePath = path.join('public', 'data', 'peces.json');
-  
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      res.status(500).json({ error: 'Error reading JSON file' });
-      return;
-    }
-    res.status(200).json(JSON.parse(data));
-  });
-};
+const server = jsonServer.create();
+const router = jsonServer.router(path.join('public', 'data', 'peces.json')); // Ajusta la ruta si es necesario
+const middlewares = jsonServer.defaults();
 
+server.use(middlewares);
+server.use(router);
+
+export default (req, res) => {
+  server(req, res);
+};
