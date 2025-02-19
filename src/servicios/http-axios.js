@@ -1,10 +1,12 @@
 import axios from "axios";
 
-const http = axios.create({
-    baseURL:"/api/",
-    headers: {
-        "Content-Type" : "application/json"
-    },
-})
+const baseURL = process.env.REACT_APP_API_URL || "/api/";
 
-export default http
+const http = axios.create({
+  baseURL: baseURL,
+  headers: {
+    "Content-Type": "application/json"
+  },
+});
+
+export default http;
