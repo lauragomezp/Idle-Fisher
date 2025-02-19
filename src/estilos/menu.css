@@ -1,0 +1,73 @@
+/* Contenedor principal */
+.menu-superior {
+  position: relative;
+  background: linear-gradient(to top, #7bafb5, #e5e5e5, #7BAFB5);
+  margin: 0;
+  padding: 20px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+}
+
+/* Lista del menú */
+.menu-lista {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-superior img{
+  width: 60px;
+}
+
+.menu-a:hover img {
+  transform: scale(1.2); /* Verde azulado oscuro al pasar el ratón */
+}
+
+
+.menu-superior img:hover {
+  transform: scale(1.2);  /* Verde azulado oscuro al pasar el ratón */
+}
+
+.menu-lista li {
+  margin: 0 15px;
+}
+
+
+
+/* Enlaces */
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold; /* Fuente moderna */
+}
+
+a:hover {
+  text-shadow: 2px 2px #008f8f; /* Verde azulado oscuro al pasar el ratón */
+}
+
+/* Estilos para la información del carrito */
+.carrito-info {
+  text-shadow: 3px 3px #7bafb5c5;
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+  color: #008f8f;
+  font-weight: bold; /* Empujar a la derecha */
+}
+
+.carrito-total {
+  font-size: 2em; /* Tamaño más grande */
+  margin: 0 10px; /* Espacio entre total e importe */
+}
+
+.info-titulo{
+  text-shadow: 3px 3px #008f8f;
+  font-family: 'Scifi';
+  color: white;
+}

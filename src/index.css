@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Scifi';
+    src: url('../public/fonts/scifi2k2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Neuropol';
+    src: url('../public/fonts/neuropol_x_free.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Nintendo';
+    src: url('../public/fonts/NintendBoldRM8E.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Game';
+    src: url('../public/fonts/game_font_7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'JoyKim';
+    src: url('../public/fonts/Joy\ Kim.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body{
+    cursor: url('../public/imagenes/cursors/glass/Normal.cur'), auto;
+  }
+
+  button {
+    cursor: url('../public/imagenes/cursors/glass/Link.cur'), pointer;
+  }
+
+  a[href] {
+    cursor: url('../public/imagenes/cursors/glass/Link.cur'), pointer;
+  }

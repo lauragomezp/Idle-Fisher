@@ -1,0 +1,36 @@
+
+  
+  /* Información del producto */
+  .producto-info-detalle {
+    text-align: center;
+  }
+  
+  .producto-nombre-detalle {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .producto-precio-detalle {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .producto-imagen-detalle {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mensaje de error */
+  .error-mensaje {
+    font-size: 1.5rem;
+    color: #e63946;
+    text-align: center;
+    font-weight: bold;
+  }
+  

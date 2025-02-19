@@ -1,0 +1,90 @@
+/* Basic table styles */
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    background: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #d1d1d1;
+    padding-left: 50px;
+  }
+
+  th img{
+    width: 20px;;
+  }
+  
+  /* Header style */
+  thead {
+    background: linear-gradient(180deg, #8b9dc3, #7a8b9f);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .crear-producto-btn:hover {
+    background: #a1c1d8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  
+  /* Action buttons styling */
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .crear-producto-btn {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 6px 12px;
+    background: linear-gradient(180deg, #8b9dc3, #7a8b9f);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    
+    float:right;
+    margin: 30px;
+  }
+  
+  
+  button.edit {
+    background: #4caf50;
+    color: white;
+  }
+  
+  button.delete {
+    background: #f44336;
+    color: white;
+  }
+
+  button.edit:hover {
+    background: #3e9141;
+  }
+  
+  button.delete:hover {
+    background: #c9362c;
+  }
+  
+
+  /*.crear-producto-btn {
+    padding: 10px 20px;
+    background-color: #8b9dc3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }*/
+  
+  

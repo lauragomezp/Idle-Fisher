@@ -1,0 +1,52 @@
+body {
+    height: 100%;
+    margin: 0; 
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters input, .filters button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.actions button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+}

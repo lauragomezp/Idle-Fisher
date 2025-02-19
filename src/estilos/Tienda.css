@@ -1,0 +1,145 @@
+/* Contenedor principal */
+.container-tienda {
+  margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items to the start of the flex container */
+    padding: 20px;
+    height: 100%; /* Allow the height to be flexible */
+    flex-direction: column;
+    /*background-image: url("../../../imagenes/waterbig.gif");*/
+  }
+  
+  /* Contenedor para las tarjetas de productos (peces) */
+  .container-imagen-tienda {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas para los peces */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+  }
+  
+  .producto-tarjeta-tienda-img {
+    width: 100%;
+    height: 150px; /* Asegura una altura constante para las imágenes */
+    object-fit: cover;
+    border-bottom: 2px solid #f4f4f4;
+  }
+  
+  .producto-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .producto-info p {
+    margin: 5px 0;
+  }
+
+  .producto-detalle{
+    color: white;
+    font-weight: bold;
+  }
+  
+  .producto-info .cantidad {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Estilo de la sección para contratar pescadores */
+  .autoclicker-section {
+    /*background: linear-gradient(to top, #7bafb5, #e5e5e5, #7BAFB5);*/
+
+    padding: 15px;
+    background-color: #ffffffc7;
+    border-top: 2px solid #ddd;
+    text-align: center;
+  }
+  
+  /* Botón para contratar pescador */
+  .autoclicker-section button {
+    background-color: #008f8f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .vender-img{
+    height: 20px;
+  }
+  
+  .autoclicker-section button:hover {
+    background-color: #00bcd4;
+  }
+  
+  /* Estilo específico para cada pez/producto */
+  #pez-0,
+  #pez-1,
+  #pez-2 {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.509); 
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .container-imagen {
+      grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container-imagen {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+  }
+  
+  /* Sección de pescadores debajo de cada tarjeta de pez */
+  /* Sección de pescadores debajo de cada tarjeta de pez */
+    .producto-tarjeta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+    }
+  
+  /* Contenedor para el botón VENDER */
+  .producto-acciones {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;  /* Centrar el contenido dentro de la sección */
+  }
+  
+  /* Botón VENDER con estilo */
+  .btn-vender {
+    background-color: #ffffffc7; /* Color de fondo atractivo */
+    color: #008f8f;
+    padding: 10px 20px; /* Espaciado del botón */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+  }
+  
+  /* Efecto de hover para el botón */
+  .btn-vender:hover {/* Cambio de color al pasar el mouse */
+    transform: scale(1.05);  /* Efecto de aumento de tamaño */
+  }
+  
+  /* Efecto de foco para el botón */
+  .btn-vender:focus {
+    outline: none;  /* Eliminar el borde del foco */
+  }
+  
+  
+  .autoclicker-section {
+    margin-top: 10px;
+  }
+  

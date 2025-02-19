@@ -1,0 +1,8 @@
+{
+    "informacion" : [ 
+    { "id": 1, "url": "/imagenes/ajos.jpeg", "nombre": "Ajos", "precio": 7.15 }, 
+    { "id": 2, "url": "/imagenes/aceitunas.jpeg", "nombre": "Aceitunas", "precio": 8.99 }, 
+    { "id": 3, "url": "/imagenes/calabacin.jpg", "nombre": "Calabacin", "precio": 1.99 },
+    { "id": 4, "url": "/imagenes/calabaza.jpg", "nombre": "Calabaza", "precio": 3.17 }
+  ]
+}

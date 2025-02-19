@@ -1,0 +1,111 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker background for a softer effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* Modal content */
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for Vista-like depth */
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Vista font family */
+  background: linear-gradient(180deg, #f0f0f0, #e0e0e0); /* Soft gradient background */
+  border: 1px solid #d1d1d1; /* Light border for separation */
+  box-shadow: inset 2px 2px 4px rgb(121, 111, 111);
+}
+
+/* Modal content image */
+.modal-content img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 15px; /* Centered and spaced image */
+}
+
+/* Close button */
+.close-btn {
+  background: #ff6b6b;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+.close-btn:hover {
+  background: #e54b5b;
+}
+
+/* Add subtle transition effects for the modal */
+.modal-content,
+.close-btn {
+  transition: all 0.3s ease;
+}
+
+.modal-content:hover {
+  transform: translateY(-2px); /* Slight movement effect on hover */
+}
+
+.close-btn:hover {
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+
+/*.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.modal-content img{
+  width: 100px;
+}
+
+.close-btn {
+  background: #ff6b6b;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #e54b5b;
+}*/

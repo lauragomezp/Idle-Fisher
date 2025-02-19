@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Productos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Administración de Productos</h2>
+
+        <!-- Filtros de Búsqueda -->
+        <div class="filters">
+            <input type="text" id="searchName" placeholder="Buscar por nombre">
+            <input type="number" id="minPrice" placeholder="Precio mínimo">
+            <input type="number" id="maxPrice" placeholder="Precio máximo">
+            <button onclick="applyFilters()">Filtrar</button>
+        </div>
+
+        <!-- Tabla de Productos -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio (€)</th>
+                    <th>URL</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <tr>
+                    <td>1</td>
+                    <td>Manzana Roja</td>
+                    <td>2.50</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Leche Entera</td>
+                    <td>1.20</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pan Integral</td>
+                    <td>1.80</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Huevos (12 unidades)</td>
+                    <td>3.50</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Yogur Natural</td>
+                    <td>0.80</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Pollo Fresco</td>
+                    <td>5.90</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Arroz Basmati</td>
+                    <td>2.10</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Aceite de Oliva</td>
+                    <td>4.50</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Chocolate Negro</td>
+                    <td>2.30</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Queso Manchego</td>
+                    <td>6.75</td>
+                    <td><a href="#">Ver Producto</a></td>
+                    <td class="actions">
+                        <button class="edit">Editar</button>
+                        <button class="delete">Eliminar</button>
+                        <button class="view">Consultar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+
