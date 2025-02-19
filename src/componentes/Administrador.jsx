@@ -4,6 +4,8 @@ import ServicioInformacion from '../servicios/ServicioInformacion';
 import Modal from './Modal/Modal'
 import CrearUsuario from './Modal/CrearUsuario';
 import ServicioInformacionUsuarios from '../servicios/ServicioInformacionUsuarios';
+import { anadirUsuario } from '../herramientas/buscarProducto';
+import { eliminarUsuario } from '../herramientas/buscarProducto';
 
 function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, clicks, total, setTotal, pescadores, setPescadores, setPecesConCantidad, pecesConCantidad}) {
   
@@ -42,27 +44,16 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
     nuevoUsuario.pescadores = pescadores
     nuevoUsuario.peces = pecesConCantidad
     nuevoUsuario.dinero = total
-    ServicioInformacionUsuarios.post(nuevoUsuario)
-      .then(() => {
-        ServicioInformacionUsuarios.getNombre(nuevoUsuario.nombre)
-          .then((response) => setInformacion(response.data))
-          .catch(() => alert('No se ha podido descargar la información...'));
-        setModals({ ...modals, crear: false }); // Cerrar modal
-      })
-      .catch(() => alert("Error al crear el usuario"));
+    setUsuarios(anadirUsuario(usuarios, nuevoUsuario))
+    setInformacion(usuarios)
   };
 
   const borrarPartida = (usuario) =>{
         const confirmar = window.confirm("¿Estás seguro de que deseas eliminar esta partida?");
         if (confirmar) {
-          ServicioInformacionUsuarios.delete(usuario.id)
-            .then(() => {
-              
-              ServicioInformacionUsuarios.getAll().then((response) => setInformacion(response.data))
-              //setInformacion(informacion.filter(item => item.id !== id));
-              alert("Partida eliminada correctamente.");
-            })
-            .catch((e) => console.log(e));
+          setUsuarios(eliminarUsuario(usuarios, usuario.id))
+          setInformacion(usuarios)
+          alert("Partida eliminada correctamente.");
         }
   }
 

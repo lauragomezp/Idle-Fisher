@@ -20,15 +20,6 @@ class ServicioInformacionUsuarios {
         .then(response => response.data.filter(usuario => usuario.nombre.toLowerCase().includes(nombre.toLowerCase())));  // Filtra por nombre
     }
   
-    // Eliminar un usuario por ID
-    delete(id) {
-      return http.delete(`/getUsuarios/${id}`);  // Aquí se puede mantener la misma ruta para eliminar
-    }
-  
-    // Crear un nuevo usuario
-    post(nuevoUsuario) {
-      return http.post(`/getUsuarios/`, nuevoUsuario);  // Aquí también puedes mantener la misma ruta
-    }
   }
   
   export default new ServicioInformacionUsuarios();

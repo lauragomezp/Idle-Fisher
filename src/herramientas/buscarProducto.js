@@ -23,6 +23,15 @@ export function incrementarCantidad(informacion , nombre) {
   });
 }
 
+export function anadirUsuario(informacion, nuevoUsuario) {  
+  return [...informacion, nuevoUsuario];
+}
+
+export function eliminarUsuario(informacion, usuarioID) {
+  return informacion.filter(usuario => usuario.id !== usuarioID.toLowerCase());
+}
+
+
 export function sumarPescador(pescadores, pez){
 
   return pescadores.map((pescador) => {

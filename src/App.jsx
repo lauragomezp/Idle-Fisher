@@ -67,7 +67,7 @@ function App() {
   const [clicks, setClicks] = UseStorageState("clicks",0);
   const [peces, setPeces] = UseStorageState("peces", []);
   const [pecesConCantidad, setPecesConCantidad] = UseStorageState("pecesConCantidad", pecesConCantidadJSON);
-  const [usuarios, setUsuarios] = UseStorageState("usuarios", []);
+  const [usuarios, setUsuarios] = UseLocalStorageState("usuarios", []);
 
   useEffect(() => {
     if (pescadores && pescadores.length > 0) {
