@@ -25,7 +25,7 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
         setInformacion(response.data)
       }
       )
-      .catch((error)=>{alert("no se ha podido cargar la info "+ error)})
+      .catch((error)=>{console.log("no se ha podido cargar la info "+ error)})
   
     },[])
 
@@ -71,10 +71,10 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
       <table>
         <thead>
           <tr>
-          <th><img src='../../public/imagenes/userclear.png'></img> Nombre</th>
-          <th>Clicks <img src='../../public/imagenes/pointer.png'></img></th>
+          <th><img src='/imagenes/userclear.png'></img> Nombre</th>
+          <th>Clicks <img src='/imagenes/pointer.png'></img></th>
           <th>Dinero (€) 💵</th>
-          <th>Cargar partida <img src='../../public/imagenes/Disc002.ico'></img></th>
+          <th>Cargar partida <img src='/imagenes/Disc002.ico'></img></th>
           </tr>
         </thead>
         <tbody>
