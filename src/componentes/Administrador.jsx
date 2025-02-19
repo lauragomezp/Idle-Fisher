@@ -21,8 +21,8 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
    useEffect(()=>{
       ServicioInformacionUsuarios.getAll()
       .then((response)=>{
-        setUsuarios(response.data)
-        setInformacion(response.data)
+        setUsuarios(response)
+        setInformacion(response)
       }
       )
       .catch((error)=>{console.log("no se ha podido cargar la info "+ error)})
