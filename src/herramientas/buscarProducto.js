@@ -27,11 +27,14 @@ export function anadirUsuario(informacion, nuevoUsuario) {
   const usuarioExistenteIndex = informacion.findIndex(usuario => usuario.nombre === nuevoUsuario.nombre);
 
   if (usuarioExistenteIndex !== -1) {
-    const nuevaInformacion = [...informacion]; 
-    nuevaInformacion[usuarioExistenteIndex] = nuevoUsuario; 
-
-    alert(`El usuario ${nuevoUsuario.nombre} ya existía y ha sido actualizado.`); 
+    const sobreescibir = confirm("El usuario que quiere crear ya existe. ¿Estás seguro de que quieres sobreescribir la partida?")
+    if (sobreescibir){
+      const nuevaInformacion = [...informacion]; 
+    nuevaInformacion[usuarioExistenteIndex] = nuevoUsuario;
     return nuevaInformacion;
+    }else{
+      return informacion
+    }
   } else {
    
     alert(`Usuario ${nuevoUsuario.nombre} creado.`);
