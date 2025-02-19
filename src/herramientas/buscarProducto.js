@@ -23,8 +23,20 @@ export function incrementarCantidad(informacion , nombre) {
   });
 }
 
-export function anadirUsuario(informacion, nuevoUsuario) {  
-  return [...informacion, nuevoUsuario];
+export function anadirUsuario(informacion, nuevoUsuario) {
+  const usuarioExistenteIndex = informacion.findIndex(usuario => usuario.nombre === nuevoUsuario.nombre);
+
+  if (usuarioExistenteIndex !== -1) {
+    const nuevaInformacion = [...informacion]; 
+    nuevaInformacion[usuarioExistenteIndex] = nuevoUsuario; 
+
+    alert(`El usuario ${nuevoUsuario.nombre} ya existía y ha sido actualizado.`); 
+    return nuevaInformacion;
+  } else {
+   
+    alert(`Usuario ${nuevoUsuario.nombre} creado.`);
+    return [...informacion, nuevoUsuario];
+  }
 }
 
 export function eliminarUsuario(informacion, usuarioEliminar) {
