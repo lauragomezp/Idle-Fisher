@@ -8,9 +8,9 @@
   ],
   "routes": [
     {
-      "src": "src/api/json-server.js",
-      "use": "@vercel/node"
-    }    
+      "src": "/api/(.*)",
+      "dest": "src/api/json-server.js"
+    }
   ]
   }
   
