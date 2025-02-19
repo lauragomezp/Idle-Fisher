@@ -4,6 +4,7 @@ class ServicioInformacion {
 
   // Obtener todos los peces
   getAll() {
+    console.log("response data get all: "+response.data)
     return http.get("/getData")  // La función getData.js en Netlify
       .then(response => response.data.peces);  // Accede a los peces dentro de la respuesta
   }
