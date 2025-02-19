@@ -5,7 +5,7 @@ import cors from 'cors'; // Importa el paquete cors
 const server = jsonServer.create();
 
 // Configura la ruta al archivo JSON
-const router = jsonServer.router(path.join(__dirname, '..', 'public', 'data', 'peces.json'));
+const router = jsonServer.router(path.join(__dirname, 'data', 'peces.json'));
 
 // Middlewares predeterminados de json-server
 const middlewares = jsonServer.defaults();
