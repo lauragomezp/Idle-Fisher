@@ -1,4 +1,4 @@
-exports.handlerUsuarios = async (event, context) => {
+exports.handler = async (event, context) => {
     const usuariosData = [
       {
         "id": "17e9",

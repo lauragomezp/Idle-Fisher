@@ -1,5 +1,5 @@
 // Servir los datos de los peces
-exports.handlerPeces = async (event, context) => {
+exports.handler = async (event, context) => {
     const pecesData = [
       {
         "id": "1",
