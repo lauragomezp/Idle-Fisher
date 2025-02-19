@@ -1,22 +1,31 @@
 import http from "./http-axios"
 
-class ServicioInformacion{
+class ServicioInformacion {
 
-    getAll(){
-        return http.get("peces")
-    }
+  // Obtener todos los peces
+  getAll() {
+    return http.get("/getData")  // La función getData.js en Netlify
+      .then(response => response.data.peces);  // Accede a los peces dentro de la respuesta
+  }
 
-    getId(id){
-        return http.get(`peces/${id}`)
-    }
+  // Obtener un pez por ID
+  getId(id) {
+    return http.get("/getData")  // La función getData.js en Netlify
+      .then(response => response.data.peces.find(pez => pez.id === id));  // Filtra por ID
+  }
 
-    getNombre(nombre) {
-        return http.get(`/peces?nombre=${nombre}`);
-    } 
+  // Buscar por nombre
+  getNombre(nombre) {
+    return http.get("/getData")  // La función getData.js en Netlify
+      .then(response => response.data.peces.filter(pez => pez.nombre.toLowerCase().includes(nombre.toLowerCase())));  // Filtra por nombre
+  }
 
-    getGtPrecio(precio) {
-        return http.get(`/peces/?precio_gt=${precio}`);
-    } 
+  // Buscar por precio mayor que
+  getGtPrecio(precio) {
+    return http.get("/getData")  // La función getData.js en Netlify
+      .then(response => response.data.peces.filter(pez => pez.precio > precio));  // Filtra por precio mayor
+  }
 
 }
-export default new ServicioInformacion
+
+export default new ServicioInformacion();

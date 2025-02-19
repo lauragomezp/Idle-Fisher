@@ -1,26 +1,34 @@
 import http from "./http-axios"
 
-class ServicioInformacionUsuarios{
+class ServicioInformacionUsuarios {
 
-    getAll(){
-        return http.get("/usuarios")
-    }
+  // Obtener todos los usuarios
+  getAll() {
+    return http.get("/getData")  // La función getData.js en Netlify
+      .then(response => response.data.usuarios);  // Accede a los usuarios dentro de la respuesta
+  }
 
-    getId(id){
-        return http.get(`/usuarios/${id}`)
-    }
+  // Obtener un usuario por ID
+  getId(id) {
+    return http.get("/getData")  // La función getData.js en Netlify
+      .then(response => response.data.usuarios.find(usuario => usuario.id === id));  // Filtra por ID
+  }
 
-    getNombre(nombre) {
-        return http.get(`/usuarios?nombre=${nombre}`);
-    }
+  // Buscar un usuario por nombre
+  getNombre(nombre) {
+    return http.get("/getData")  // La función getData.js en Netlify
+      .then(response => response.data.usuarios.filter(usuario => usuario.nombre.toLowerCase().includes(nombre.toLowerCase())));  // Filtra por nombre
+  }
 
-    delete(id) {
-        return http.delete(`/usuarios/${id}`);
-    }
-    
-    post(nuevoUsuario){
-        return http.post(`/usuarios/`, nuevoUsuario)
-    }
+  // Eliminar un usuario por ID
+  delete(id) {
+    return http.delete(`/usuarios/${id}`);  // Aquí se puede mantener la misma ruta para eliminar
+  }
 
+  // Crear un nuevo usuario
+  post(nuevoUsuario) {
+    return http.post(`/usuarios/`, nuevoUsuario);  // Aquí también puedes mantener la misma ruta
+  }
 }
-export default new ServicioInformacionUsuarios
+
+export default new ServicioInformacionUsuarios();
