@@ -93,8 +93,8 @@ function App() {
   useEffect(()=>{
     ServicioInformacion.getAll()
     .then((response)=>{
-      if (response && response.data && response.data.peces) {
-        setPeces(response.data.peces);
+      if (response && response.data) {
+        setPeces(response.data);
       } else {
         console.error("Datos mal formateados", response);
       }
@@ -108,8 +108,8 @@ function App() {
   useEffect(()=>{
     ServicioInformacionUsuarios.getAll()
     .then((response)=>{
-      console.log(response.data.usuarios)
-      setUsuarios(response.data.usuarios)
+      console.log(response.data)
+      setUsuarios(response.data)
     }
     )
     .catch((error)=>{alert("no se ha podido cargar la info "+ error)})
