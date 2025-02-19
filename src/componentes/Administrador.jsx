@@ -21,14 +21,7 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
   };
 
    useEffect(()=>{
-      ServicioInformacionUsuarios.getAll()
-      .then((response)=>{
-        setUsuarios(response)
-        setInformacion(response)
-      }
-      )
-      .catch((error)=>{console.log("no se ha podido cargar la info "+ error)})
-  
+      setInformacion(usuarios)  
     },[])
 
     const cargarPartida = (usuario) => {
@@ -46,6 +39,7 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
     nuevoUsuario.dinero = total
     setUsuarios(anadirUsuario(usuarios, nuevoUsuario))
     setInformacion(usuarios)
+    setModals({ ...modals, crear: false });
   };
 
   const borrarPartida = (usuario) =>{

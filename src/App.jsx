@@ -62,12 +62,50 @@ function App() {
     { "nombre": "Salmón", "cantidad": 0 }
   ];
 
+  const usuariosJSON = [{
+    "id": "17e9",
+    "nombre": "vacío",
+    "clicks": 0,
+    "pescadores": [
+      {
+        "pez": "Atún",
+        "precio": 100,
+        "cantidad": 0
+      },
+      {
+        "pez": "Merluza",
+        "precio": 500,
+        "cantidad": 0
+      },
+      {
+        "pez": "Salmón",
+        "precio": 1000,
+        "cantidad": 0
+      }
+    ],
+    "peces": [
+      {
+        "nombre": "Atún",
+        "cantidad": 0
+      },
+      {
+        "nombre": "Merluza",
+        "cantidad": 0
+      },
+      {
+        "nombre": "Salmón",
+        "cantidad": 0
+      }
+    ],
+    "dinero": 0
+  }]
+
   const [total, setTotal] = UseStorageState("total", 0);
   const [pescadores, setPescadores] = UseStorageState("pescadores",pescadoresJSON);
   const [clicks, setClicks] = UseStorageState("clicks",0);
   const [peces, setPeces] = UseStorageState("peces", []);
   const [pecesConCantidad, setPecesConCantidad] = UseStorageState("pecesConCantidad", pecesConCantidadJSON);
-  const [usuarios, setUsuarios] = UseLocalStorageState("usuarios", []);
+  const [usuarios, setUsuarios] = UseLocalStorageState("usuarios", usuariosJSON);
 
   useEffect(() => {
     if (pescadores && pescadores.length > 0) {
@@ -99,17 +137,6 @@ function App() {
         console.error("Datos mal formateados", response);
       }
       console.log(response)
-    }
-    )
-    .catch((error)=>{alert("no se ha podido cargar la info "+ error)})
-
-  },[])
-
-  useEffect(()=>{
-    ServicioInformacionUsuarios.getAll()
-    .then((response)=>{
-      console.log(response)
-      setUsuarios(response)
     }
     )
     .catch((error)=>{alert("no se ha podido cargar la info "+ error)})
