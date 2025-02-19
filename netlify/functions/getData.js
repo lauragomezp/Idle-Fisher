@@ -1,5 +1,4 @@
 exports.handler = async (event, context) => {
-    // Aquí puedes generar los datos que deseas enviar como respuesta
     const data = {
       peces: [
         {
