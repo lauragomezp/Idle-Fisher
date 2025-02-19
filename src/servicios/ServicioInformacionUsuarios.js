@@ -22,12 +22,12 @@ class ServicioInformacionUsuarios {
   
     // Eliminar un usuario por ID
     delete(id) {
-      return http.delete(`/usuarios/${id}`);  // Aquí se puede mantener la misma ruta para eliminar
+      return http.delete(`/getUsuarios/${id}`);  // Aquí se puede mantener la misma ruta para eliminar
     }
   
     // Crear un nuevo usuario
     post(nuevoUsuario) {
-      return http.post(`/usuarios/`, nuevoUsuario);  // Aquí también puedes mantener la misma ruta
+      return http.post(`/getUsuarios/`, nuevoUsuario);  // Aquí también puedes mantener la misma ruta
     }
   }
   
