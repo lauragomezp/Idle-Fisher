@@ -3,7 +3,7 @@ import path from 'path';
 
 const server = jsonServer.create();
 
-const router = jsonServer.router(path.join('api', 'data', 'peces.json')); 
+const router = jsonServer.router(path.join(__dirname, '..', 'public', 'data', 'peces.json'));
 
 const middlewares = jsonServer.defaults();
 
