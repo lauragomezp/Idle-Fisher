@@ -1,0 +1,12 @@
+[build]
+  functions = "netlify/functions" 
+
+[[redirects]]
+  from = "/getPeces"
+  to = "/.netlify/functions/getPeces"
+  status = 200
+
+[[redirects]]
+  from = "/getUsuarios"
+  to = "/.netlify/functions/getUsuarios"
+  status = 200
