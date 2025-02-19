@@ -1,3 +1,5 @@
+import http from "./http-axios";
+
 class ServicioInformacionUsuarios {
 
     // Obtener todos los usuarios

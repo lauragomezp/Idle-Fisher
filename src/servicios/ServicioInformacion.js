@@ -1,3 +1,5 @@
+import http from "./http-axios";
+
 class ServicioInformacion {
 
     // Obtener todos los peces
