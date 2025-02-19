@@ -14,15 +14,10 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
     crear: false
   });
 
-  const [informacion, setInformacion] = useState(usuarios);
 
   const gestionarModal = (tipo, estado, usuario = null) => {
     setModals({ ...modals, [tipo]: estado });     
   };
-
-   useEffect(()=>{
-      setInformacion(usuarios)  
-    },[])
 
     const cargarPartida = (usuario) => {
       setPecesConCantidad(usuario.peces)
@@ -38,7 +33,6 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
     nuevoUsuario.peces = pecesConCantidad
     nuevoUsuario.dinero = total
     setUsuarios(anadirUsuario(usuarios, nuevoUsuario))
-    setInformacion(usuarios)
     setModals({ ...modals, crear: false });
   };
 
@@ -46,7 +40,6 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
         const confirmar = window.confirm("¿Estás seguro de que deseas eliminar esta partida?");
         if (confirmar) {
           setUsuarios(eliminarUsuario(usuarios, usuario.id))
-          setInformacion(usuarios)
           alert("Partida eliminada correctamente.");
         }
   }
@@ -63,7 +56,7 @@ function Administrador({peces, setPeces, usuarios, setUsuarios, setClicks, click
           </tr>
         </thead>
         <tbody>
-          {informacion.map((item, index) => (
+          {usuarios.map((item, index) => (
             <tr key={index}>
               <td>{item.nombre}</td>
               <td>{item.clicks}</td>
