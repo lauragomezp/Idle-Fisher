@@ -1,0 +1,41 @@
+/* Modal overlay */
+.modal-inicio-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Modal content */
+  .modal-inicio-content {
+    background: #ffffff;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #f0f0f0, #e0e0e0);
+    border: 1px solid #d1d1d1;
+    box-shadow: inset 2px 2px 4px rgb(121, 111, 111);
+  }
+  
+  /* Transición del overlay */
+  .ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 2000ms ease-in-out; /* Transición de desvanecimiento */
+  }
+  
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+  
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+  

@@ -12,6 +12,8 @@ import ServicioInformacion from './servicios/ServicioInformacion';
 import ServicioInformacionUsuarios from './servicios/ServicioInformacionUsuarios';
 import UseLocalStorageState from './servicios/UseLocalStorageState';
 import Administrador from './componentes/Administrador';
+import Inicio from './componentes/Modal_Inicio/Inicio';
+import ModalInicio from './componentes/Modal_Inicio/ModalInicio';
 
 const useAudio = (url) => {
   const [audio] = useState(new Audio(url));
@@ -105,6 +107,7 @@ function App() {
   const [peces, setPeces] = UseStorageState("peces", []);
   const [pecesConCantidad, setPecesConCantidad] = UseStorageState("pecesConCantidad", pecesConCantidadJSON);
   const [usuarios, setUsuarios] = UseLocalStorageState("usuarios", usuariosJSON);
+  const [isLoading, setIsLoading] = UseStorageState("isLoading", true)
 
   useEffect(() => {
     if (pescadores && pescadores.length > 0) {
@@ -142,6 +145,16 @@ function App() {
 
   },[])
 
+  useEffect(() => {
+    if (isLoading) {
+      const timer = setTimeout(() => {
+        setIsLoading(false); 
+      }, 4000); 
+
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+
   const {
     playing,
     toggle,
@@ -151,57 +164,86 @@ function App() {
 
   return (
 
-    
-    <div className="App">
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <header className="App-header">
-        {/* Pasar el total al menú superior */}
-        <MenuSuperior
-        clicks={clicks} 
-            total={total}
-                  />
-      </header>
-      <main>
-      <Routes>
-            <Route 
-              path="/" 
-              element={<ListaImagenes 
-                playing={playing} 
-                toggle={toggle} 
-                volume={volume} 
-                handleVolumeChange={handleVolumeChange} 
-                pecesConCantidad={pecesConCantidad} setPecesConCantidad={setPecesConCantidad} clicks={clicks} setClicks={setClicks} total={total} setTotal={setTotal} peces={peces} setPeces={setPeces}/>} 
-            />
-            
-            <Route path="/tienda" element={<Tienda pecesConCantidad={pecesConCantidad}
-            setPecesConCantidad={setPecesConCantidad}
-            total={total} 
-            setTotal={setTotal}
-            peces={peces}
-            setPeces={setPeces}
-            setPescadores={setPescadores}
-            setClicks={setClicks}
-            pescadores={pescadores}/>} />
-
-            <Route path="/pez/:id" element={<DetalleProducto />} />
-            <Route path="/usuarios" element={<Administrador
-            peces={peces}
-            setPeces={setPeces}
-            setPecesConCantidad={setPecesConCantidad}
-            pecesConCantidad={pecesConCantidad}
-            total={total} 
-            setTotal={setTotal}
-            setPescadores={setPescadores}
-            setClicks={setClicks}
-            clicks={clicks}
-            pescadores={pescadores}
-             usuarios={usuarios} setUsuarios={setUsuarios}/>} />
-            
-            <Route path="*" element={<Pagina404 />} />      
-
-          </Routes>
-      </main>
-    </div>
+    <div>
+        <ModalInicio 
+          closeTimeoutMS={2000}
+          isOpen={isLoading}
+          onRequestClose={() => setIsLoading(false)}
+          className="modal"
+          overlayClassName="overlay"
+        >
+          <Inicio />
+        </ModalInicio>
+  
+        {!isLoading && (
+          <div className="App">
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <header className="App-header">
+              <MenuSuperior clicks={clicks} total={total} />
+            </header>
+            <main>
+              <Routes>
+                <Route 
+                  path="/" 
+                  element={<ListaImagenes 
+                    playing={playing} 
+                    toggle={toggle} 
+                    volume={volume} 
+                    handleVolumeChange={handleVolumeChange} 
+                    pecesConCantidad={pecesConCantidad} 
+                    setPecesConCantidad={setPecesConCantidad} 
+                    clicks={clicks} 
+                    setClicks={setClicks} 
+                    total={total} 
+                    setTotal={setTotal} 
+                    peces={peces} 
+                    setPeces={setPeces} 
+                  />} 
+                />
+                <Route 
+                  path="/tienda" 
+                  element={<Tienda 
+                    pecesConCantidad={pecesConCantidad}
+                    setPecesConCantidad={setPecesConCantidad}
+                    total={total} 
+                    setTotal={setTotal}
+                    peces={peces}
+                    setPeces={setPeces}
+                    setPescadores={setPescadores}
+                    setClicks={setClicks}
+                    pescadores={pescadores}
+                  />} 
+                />
+                <Route 
+                  path="/pez/:id" 
+                  element={<DetalleProducto />} 
+                />
+                <Route 
+                  path="/usuarios" 
+                  element={<Administrador
+                    peces={peces}
+                    setPeces={setPeces}
+                    setPecesConCantidad={setPecesConCantidad}
+                    pecesConCantidad={pecesConCantidad}
+                    total={total} 
+                    setTotal={setTotal}
+                    setPescadores={setPescadores}
+                    setClicks={setClicks}
+                    clicks={clicks}
+                    pescadores={pescadores}
+                    usuarios={usuarios} 
+                    setUsuarios={setUsuarios}
+                  />} 
+                />
+                <Route 
+                  path="*" 
+                  element={<Pagina404 />} 
+                />      
+              </Routes>
+            </main>
+          </div>
+        )}
+      </div>
   
   );
 }
