@@ -18,7 +18,7 @@ const CrearUsuario = ({ onGuardar, onClose, total, clicks }) => {
   
     return (
       <div className="editar-producto">
-        <img src="../../public/imagenes/LM001.ico"></img>
+        <img src="/imagenes/LM001.ico"></img>
         <h2>Crear Usuario</h2>
         <form onSubmit={guardarCambios}>
           <label>Nombre:</label>

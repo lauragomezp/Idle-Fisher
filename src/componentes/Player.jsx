@@ -29,12 +29,12 @@ const Player = ({ song, setSong, urls, playing, toggle, volume, handleVolumeChan
   return (
     <div className="reproductor">
       <div className="botones-container">
-      <img className="previous" onClick={prevSong} src="\public\imagenes\Sign026.ico"></img>
+      <img className="previous" onClick={prevSong} src="/imagenes/Sign026.ico"></img>
         <div className="play-stop">{playing ? 
             <img onClick={toggle} className="play-stop-img" src="/imagenes/Alert006.png"></img> : 
             <img onClick={toggle} className="play-stop-img" src="/imagenes/Alert008.png"></img>}
         </div>
-        <img className="next" onClick={nextSong} src="\public\imagenes\Sign027.ico"></img>
+        <img className="next" onClick={nextSong} src="/imagenes/Sign027.ico"></img>
         </div>
         <div className="descripcion-musica">{playing ? 
             <strong>Now playing...</strong>: 
