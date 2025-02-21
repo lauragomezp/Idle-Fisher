@@ -4,7 +4,7 @@ import { buscarPez, formatearNumero, incrementarCantidad } from '../herramientas
 import Player from './Player';
 
 // Componente ListaImagenes
-const ListaImagenes = ({clicks, setClicks , peces, setPeces, pecesConCantidad, setPecesConCantidad, playing, toggle, volume, handleVolumeChange}) => {
+const ListaImagenes = ({urls, song, setSong, clicks, setClicks , peces, setPeces, pecesConCantidad, setPecesConCantidad, playing, toggle, volume, handleVolumeChange}) => {
 
   const handleClick = () => {
     setClicks(prevClicks => prevClicks + 1); 
@@ -78,7 +78,11 @@ const ListaImagenes = ({clicks, setClicks , peces, setPeces, pecesConCantidad, s
         </button>
       </div>
       
-      <Player playing={playing} 
+      <Player 
+      urls={urls}
+      song={song}
+      setSong={setSong}
+      playing={playing} 
                 toggle={toggle} 
                 volume={volume} 
                 handleVolumeChange={handleVolumeChange} ></Player>

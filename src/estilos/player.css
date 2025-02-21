@@ -19,6 +19,31 @@
       
   }
 
+  .botones-container{
+    display: flex;
+    justify-content: space-between; /* Los botones estarán distribuidos con espacio entre ellos */
+    width: 100%; /* Asegúrate de que ocupe el 100% del ancho disponible */
+    align-items: center; /* Centra verticalmente los botones */
+    margin-bottom: 10px; /* Espacio entre los botones y la barra de volumen */
+  }
+
+  .previous{
+    height: 30px;
+    cursor: url('/imagenes/cursors/glass/Link.cur'), pointer;
+  }
+
+  .next{
+    height: 30px;
+    cursor: url('/imagenes/cursors/glass/Link.cur'), pointer;
+  }
+
+  .previous:hover {
+    transform: scale(0.9);     
+  }
+  .next:hover {
+    transform: scale(0.9);     
+  }
+
   .play-stop-img{
     cursor: url('/imagenes/cursors/glass/Link.cur'), pointer;
     width: 100%;
@@ -40,7 +65,7 @@
     border-radius: 5px;
     background: linear-gradient(to right, #9bcdff, #ffffff);
     outline: none;
-    cursor: url('/imagenes/cursors/glass/Link.cur'), pointer;
+    cursor: url('../public/imagenes/cursors/glass/Link.cur'), pointer;
     transition: background 0.3s ease;
   }
   
@@ -52,7 +77,7 @@
     border-radius: 50%;
     background-color: #4a90e2;
     border: 2px solid white;
-    cursor: url('/imagenes/cursors/glass/Link.cur'), pointer;
+    cursor: url('../public/imagenes/cursors/glass/Link.cur'), pointer;
     transition: background-color 0.3s ease;
   }
   

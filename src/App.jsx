@@ -16,10 +16,17 @@ import Inicio from './componentes/Modal_Inicio/Inicio';
 import ModalInicio from './componentes/Modal_Inicio/ModalInicio';
 
 const useAudio = (url) => {
-  const [audio] = useState(new Audio(url));
+  const [audio] = useState(() => new Audio(url)); 
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
-  
+
+
+  useEffect(() => {
+    audio.pause();
+    audio.src = url;
+    audio.load();
+  }, [url]);
+
   const toggle = () => {
     audio.loop = true;
     setPlaying(!playing);
@@ -101,6 +108,8 @@ function App() {
     "dinero": 0
   }]
 
+  const urls = ["/music/Helvetica_Aqua_Aero.wav", "/music/scizzie_aquatic_ambience.wav","/music/Wii_U_OST_Mii Maker_Editing_a_Mii_(TV).wav"]
+
   const [total, setTotal] = UseStorageState("total", 0);
   const [pescadores, setPescadores] = UseStorageState("pescadores",pescadoresJSON);
   const [clicks, setClicks] = UseStorageState("clicks",0);
@@ -108,6 +117,7 @@ function App() {
   const [pecesConCantidad, setPecesConCantidad] = UseStorageState("pecesConCantidad", pecesConCantidadJSON);
   const [usuarios, setUsuarios] = UseLocalStorageState("usuarios", usuariosJSON);
   const [isLoading, setIsLoading] = UseStorageState("isLoading", true)
+  const [song, setSong] = UseStorageState("song", urls[0])
 
   useEffect(() => {
     if (pescadores && pescadores.length > 0) {
@@ -160,7 +170,7 @@ function App() {
     toggle,
     volume,
     handleVolumeChange
-  } = useAudio("music/Wii_U_OST_Mii Maker_Editing_a_Mii_(TV).wav");  // Aquí colocas la URL de tu audio
+  } = useAudio(song);
 
   return (
 
@@ -186,6 +196,9 @@ function App() {
                 <Route 
                   path="/" 
                   element={<ListaImagenes 
+                    urls={urls}
+                    song={song}
+                    setSong={setSong}
                     playing={playing} 
                     toggle={toggle} 
                     volume={volume} 
