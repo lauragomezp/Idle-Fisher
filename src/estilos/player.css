@@ -21,19 +21,20 @@
 
   .botones-container{
     display: flex;
-    justify-content: space-between; /* Los botones estarán distribuidos con espacio entre ellos */
+    justify-content: center;
+    gap: 10px; /* Los botones estarán distribuidos con espacio entre ellos */
     width: 100%; /* Asegúrate de que ocupe el 100% del ancho disponible */
     align-items: center; /* Centra verticalmente los botones */
     margin-bottom: 10px; /* Espacio entre los botones y la barra de volumen */
   }
 
   .previous{
-    height: 30px;
+    height: 25px;
     cursor: url('/imagenes/cursors/glass/Link.cur'), pointer;
   }
 
   .next{
-    height: 30px;
+    height: 25px;
     cursor: url('/imagenes/cursors/glass/Link.cur'), pointer;
   }
 
